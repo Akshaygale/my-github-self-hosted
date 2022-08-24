@@ -1,0 +1,20 @@
+name : For self-hosted Runner
+
+on:
+  push :
+    branch: ["main","master"] 
+
+  workflow_dispatch:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a one-line script
+        run: echo Welcome1
+
+      - name: Run multi-line script
+        run: |
+          echo Welcome2,
+          echo test, Again
